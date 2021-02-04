@@ -1,0 +1,24 @@
+package bancos;
+
+public class Main {
+	public static void main( String args[]) {
+		ContaBanco jubileu = new ContaBanco();
+		jubileu.abrirConta("cc");
+		jubileu.setUsuario("Jubileu");
+		jubileu.setNumConta(123);
+		jubileu.depositar(200);
+		jubileu.statusConta();
+		jubileu.mensalidade();
+		jubileu.statusConta();
+		
+		ContaBanco creuza = new ContaBanco();
+		creuza.abrirConta("CP");
+		creuza.setUsuario("Jubileu");
+		creuza.setNumConta(123);
+		creuza.depositar(200);
+		creuza.statusConta();
+		creuza.mensalidade();
+		creuza.statusConta();
+		
+	}
+}

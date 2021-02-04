@@ -1,0 +1,84 @@
+package bancos;
+
+public class ContaBanco {
+	public int numConta;
+	protected String tipo;
+	private String usuario;
+	private float saldo;
+	private boolean status;
+	
+	public ContaBanco() {
+		this.saldo = 0;
+		this.status = false;
+	}
+	
+	
+	public int getNumConta() {
+		return numConta;
+	}
+	public void setNumConta(int numConta) {
+		this.numConta = numConta;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	public float getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(float saldo) {
+		this.saldo = saldo;
+	}
+	public boolean getStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	
+	public void abrirConta(String tipo) {
+		if(tipo == "cc" || tipo == "CC") {
+			this.tipo = tipo;
+			setSaldo(50f);
+			setStatus(true);
+		}else if(tipo == "cp" || tipo == "CP") {
+			this.tipo = tipo;
+			setSaldo(150f);
+			setStatus(true);
+		}else {
+			System.out.println("Operação inválida tente novamente.");
+		}
+	}
+	public void fecharConta() {
+		if(this.getSaldo() > 0 ) {
+			System.out.println("Há saldo na sua conta, necessário resgatá-lo \nSeu saldo atual é de:" + getSaldo());
+		}else if( this.getSaldo() < 0 ) {
+			System.out.println("Há débitos na sua conta, necessário quitá-los \nSeu saldo atual é de:" + getSaldo());
+		}else {
+			System.out.println("Conta fechada");
+			setStatus(false);
+		}
+	}
+	public void depositar(float saldo) {
+		if(getStatus() == true) {
+			setSaldo(getSaldo() + saldo);
+		}else {
+			System.out.println("Conta inativa");
+		}
+	}
+	public void sacar(float saldo) {
+		if(getStatus() == true) {
+			setSaldo(getSaldo() - saldo);
+		}else {
+			System.out.println("Conta inativa");
+		}
+	}
+	public void mensalidade() {}

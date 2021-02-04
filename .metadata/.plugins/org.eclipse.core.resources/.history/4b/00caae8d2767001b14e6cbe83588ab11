@@ -1,0 +1,17 @@
+package bancos;
+
+public class Main {
+	public static void main( String args[]) {
+		ContaBanco jubileu = new ContaBanco();
+		jubileu.abrirConta("cc");
+		jubileu.setUsuario("Jubileu");
+		jubileu.setNumConta(123);
+		jubileu.depositar(200);
+		jubileu.fecharConta();
+		jubileu.sacar(250);
+		jubileu.fecharConta();
+		
+	
+		
+	}
+}
