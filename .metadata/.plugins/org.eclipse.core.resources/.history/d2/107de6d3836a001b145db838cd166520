@@ -115,7 +115,7 @@ public class ContaBanco {
 		System.out.println(getUsuario());
 		System.out.println(getSaldo());
 		System.out.println(getStatus());
-		System.out.println("--------------------------");
+		System.out.println();
 	}
 	
 }

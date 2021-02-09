@@ -96,12 +96,12 @@ public class ContaBanco {
 		}
 	}
 	public void mensalidade() {
-		if(getTipo() == "cc" || getTipo() == "CC" && getStatus()) {
+		if(getTipo() == "cc" || getTipo() == "CC" && getStatus() == true) {
 			setSaldo(getSaldo()-12);
 			System.out.println("mensalidade no valor de 12 reais");
 			System.out.println("Saldo atual de: " + getSaldo());
 			System.out.println();
-		}else if(getTipo() == "cp" || getTipo() == "CP" && getStatus()) {
+		}else if(getTipo() == "cp" || getTipo() == "CP" && getStatus() == true) {
 			setSaldo(getSaldo()-20);
 			System.out.println("mensalidade no valor de 20 reais");
 			System.out.println("Saldo atual de:"+getSaldo());
@@ -115,7 +115,7 @@ public class ContaBanco {
 		System.out.println(getUsuario());
 		System.out.println(getSaldo());
 		System.out.println(getStatus());
-		System.out.println("--------------------------");
+		System.out.println();
 	}
 	
 }
